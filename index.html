@@ -44,7 +44,7 @@
       >
     </div>
     -->
-    <div style="height: 30vh"></div>
+    <div style="height: 55vh"></div>
 
     <div
       class="box-banner full_width headline animiraj_me text-right btn-left fade-img"
@@ -96,35 +96,14 @@
       </div>
     </div>
 
-    <div style="height: 80vh">
-      <p
-        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Nulla aliquet enim
-        tortor at auctor urna nunc id cursus. Egestas quis ipsum suspendisse
-        ultrices gravida dictum fusce ut. Semper quis lectus nulla at volutpat
-        diam ut venenatis. Lectus quam id leo in vitae. Pharetra pharetra massa
-        massa ultricies mi quis hendrerit dolor. Elit at imperdiet dui accumsan
-        sit amet nulla. Odio euismod lacinia at quis risus sed. Suspendisse
-        faucibus interdum posuere lorem ipsum dolor sit amet consectetur.
-        Tristique senectus et netus et malesuada fames ac. Diam sollicitudin
-        tempor id eu nisl nunc. Nec ullamcorper sit amet risus. At erat
-        pellentesque adipiscing commodo elit at imperdiet. Congue quisque
-        egestas diam in arcu cursus euismod quis. Fringilla phasellus faucibus
-        scelerisque eleifend donec pretium. Amet mauris commodo quis imperdiet
-        massa tincidunt. Morbi tristique senectus et netus. Scelerisque varius
-        morbi enim nunc faucibus. Tellus mauris a diam maecenas. Eu ultrices
-        vitae auctor eu augue ut lectus arcu. Sem viverra aliquet eget sit amet
-        tellus cras. Mattis aliquam faucibus purus in massa tempor nec feugiat.
-        Elementum curabitur vitae nunc sed. Convallis a cras semper auctor neque
-        vitae tempus quam pellentesque.
-      </p></div
-    >
+    <div style="height: 100vh"> </div>
 
     <!-- Content header -->
 
     <div
       class="box-banner full_width container1 animiraj_me move-down-text btn-up"
       id="c0_b2"
+      style="height: 100vh"
     >
       <picture class="bckg" alt="" loading="lazy">
         <source
@@ -167,7 +146,7 @@
       </div>
     </div>
 
-    <div style="height: 10vh"></div>
+    <div style="height: 30vh"></div>
 
     <!-- Text header -->
 
@@ -265,33 +244,20 @@
       elm.classList.toggle("active");
     }
 
-    $(document).ready(function () {
-      var screenHeight = $(window).height();
-      var screenHeightHalf = screenHeight / 2;
-      console.log(screenHeight);
-      console.log(screenHeightHalf);
-
-      $(window).scroll(function () {
-        $(".animiraj_me").each(function () {
-          var scrollTop = $(window).scrollTop();
-          var bannerFromTop = $(this).offset().top;
-          console.log(bannerFromTop);
-          console.log("distance", bannerFromTop - scrollTop);
-          var distance = bannerFromTop - scrollTop;
-          if (distance > screenHeightHalf) {
-            console.log("DISTANCE");
-          }
-        });
-      });
-    });
-
-    // funckcija za checkiranje če je element v viewportu, nato dodaš class animacije
+    // funckcija za checkiranje, če je element v viewportu, nato dodaš class animacije
 
     $.fn.isInViewport = function () {
       var elementTop = $(this).offset().top;
       var elementBottom = elementTop + $(this).outerHeight() / 2;
       var viewportTop = $(window).scrollTop();
-      var viewportHalf = viewportTop + $(window).height() / 2;
+      var viewportHalf = viewportTop + $(window).height() / 1.5;
+      var distance = elementTop - viewportTop;
+      console.log("Distance from top of element to viewport top:", distance);
+      if (distance > viewportHalf) {
+        console.log(
+          "Distance from top of element to top of viewport to half of viewport"
+        );
+      }
       return elementBottom > viewportTop && elementTop < viewportHalf;
     };
     $(window).on("load resize scroll", function () {
