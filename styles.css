@@ -290,7 +290,7 @@ button.btn-large, .button.btn-large {
 /* text banner */
 #c0_b4.box-banner {
   border-radius: 0px;
-  min-height: 60vh;
+  min-height: 20vh;
 }
 
 #c0_b4.box-banner.flip img {
